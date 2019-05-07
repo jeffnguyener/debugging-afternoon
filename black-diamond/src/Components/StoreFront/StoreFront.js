@@ -10,10 +10,10 @@ class StoreFront extends Component {
         <h2>{element.desc}</h2>
         <h3>{"$" + element.price + ".00"}</h3>
         <button onClick={() => this.props.addToCart(element)}>Purchase!</button>
-      </div>;
+      </div>
     });
     return <div className="storefront-container">{productDisplay}</div>;
-  }
+    }
 }
 
 export default StoreFront;
