@@ -40,26 +40,30 @@ class App extends Component {
   }
   navigate(location) {
     if (location === "cart") {
-      this.setState.showCart = true;
+      this.setState({
+        showCart: true
+      });
     } else {
-      this.setState.showCart = false;
+      this.setState({
+        showCart: false
+      });
     }
   }
-  render() {
-    const { products, cart, showCart } = this.state;
-    return (
-      <div className="App">
-        <NavBar navigate={this.navigate} />
-        <div className="main-container">
-          {showCart ? (
-            <ShoppingCart cart={cart} removeFromCart={this.removeFromCart} />
-          ) : (
-              <StoreFront products={products} addToCart={this.addToCart} />
-            )}
+    render() {
+      const { products, cart, showCart } = this.state;
+      return (
+        <div className="App">
+          <NavBar navigate={this.navigate} />
+          <div className="main-container">
+            {showCart ? (
+              <ShoppingCart cart={cart} removeFromCart={this.removeFromCart} />
+            ) : (
+                <StoreFront products={products} addToCart={this.addToCart} />
+              )}
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
-}
 
-export default App;
+  export default App;
